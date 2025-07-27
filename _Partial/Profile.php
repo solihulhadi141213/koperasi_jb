@@ -2,10 +2,10 @@
     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <?php
             if($SessionModeAkses=="Anggota"){
-                echo '<img src="assets/img/Anggota/'.$SessionGambar.'" alt="Profile" class="rounded-circle">';
+                echo '<img src="image_proxy.php?dir=Anggota&filename='.$SessionGambar.'" alt="Profile" class="rounded-circle">';
                 echo '<span class="d-none d-md-block dropdown-toggle ps-2 text-white">'.$SessionNama.'</span>';
             }else{
-                echo '<img src="assets/img/User/'.$SessionGambar.'" alt="Profile" class="rounded-circle">';
+                echo '<img src="image_proxy.php?dir=User&filename='.$SessionGambar.'" alt="Profile" class="rounded-circle">';
                 echo '<span class="d-none d-md-block dropdown-toggle ps-2 text-white">'.$SessionNama.'</span>';
             }
         ?>

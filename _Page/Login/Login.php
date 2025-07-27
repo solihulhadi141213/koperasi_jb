@@ -5,11 +5,7 @@
     </div>
     <form action="javascript:void(0);" class="row g-3" id="ProsesLogin">
         <div class="col-12">
-            <label for="mode_akses" class="form-label">Mode Akses</label>
-            <select name="mode_akses" id="mode_akses" class="form-control">
-                <option value="Pengurus">Pengurus</option>
-                <option value="Anggota">Anggota</option>
-            </select>
+            <input type="hidden" name="mode_akses" id="mode_akses" value="Pengurus">
         </div>
         <div class="col-12">
             <label for="email" class="form-label">Email</label>
@@ -40,7 +36,7 @@
             <button class="btn btn-primary w-100" type="submit">Login</button>
         </div>
         <div class="col-12">
-            <p class="small mb-0">Anda Lupa Password? <a href="Login.php?Page=LupaPassword">Reset password</a></p>
+            <p class="small mb-0">Apabila anda lupa password, silahkan hubungi admin</p>
         </div>
     </form>
 </div>

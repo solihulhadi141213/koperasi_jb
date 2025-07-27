@@ -19,17 +19,17 @@
                 </li>
                 <li>
                     <a href="index.php?Page=AksesEntitas" class="<?php if($PageMenu=="AksesEntitas"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Entitas Pengurus</span>
+                        <i class="bi bi-circle"></i><span>Entitas Akses</span>
                     </a>
                 </li>
                 <li>
                     <a href="index.php?Page=Akses" class="<?php if($PageMenu=="Akses"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Akses Pengurus</span>
+                        <i class="bi bi-circle"></i><span>Akun Akses</span>
                     </a>
                 </li>
             </ul>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link <?php if($PageMenu=="Anggota"||$PageMenu=="AnggotaKeluarMasuk"||$PageMenu=="RekapAnggota"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#anggota-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-people"></i>
                 <span>Anggota</span>
@@ -52,8 +52,8 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
             <a class="nav-link <?php if($PageMenu=="JenisSimpanan"||$PageMenu=="SimpananWajib"||$PageMenu=="Tabungan"||$PageMenu=="RekapSimpanan"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#simpanan-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-wallet"></i>
                 <span>Simpanan</span>
@@ -81,8 +81,8 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
             <a class="nav-link <?php if($PageMenu=="JenisPinjaman"||$PageMenu=="Pinjaman"||$PageMenu=="Tagihan"||$PageMenu=="RekapPinjaman"||$PageMenu=="PotonganAnggota"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#pinjaman-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-bank"></i>
                 <span>Pinjaman</span>
@@ -115,7 +115,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link <?php if($PageMenu=="Barang"||$PageMenu=="BarangExpired"||$PageMenu=="StockOpename"||$PageMenu=="Supplier"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#icons2-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-box-seam"></i>
@@ -201,11 +201,11 @@
                 <span>Keuangan</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="keuangan-nav" class="nav-content collapse <?php if($PageMenu=="Pembayaran"||$PageMenu=="AkunPerkiraan"||$PageMenu=="Jurnal"||$PageMenu=="BagiHasil"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
-                <li>
+                <!-- <li>
                     <a href="index.php?Page=BagiHasil" class="<?php if($PageMenu=="BagiHasil"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Bagi Hasil (SHU)</span>
                     </a>
-                </li>    
+                </li>     -->
                 <li>
                     <a href="index.php?Page=AkunPerkiraan" class="<?php if($PageMenu=="AkunPerkiraan"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Akun Perkiraan</span>
@@ -223,11 +223,11 @@
                 <i class="bi bi-bar-chart"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="charts-nav" class="nav-content collapse <?php if($PageMenu=="SimpanPinjam"||$PageMenu=="BukuBesar"||$PageMenu=="NeracaSaldo"||$PageMenu=="LabaRugi"||$PageMenu=="RiwayatSimpanPinjam"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
-                <li>
+                <!-- <li>
                     <a href="index.php?Page=SimpanPinjam" class="<?php if($PageMenu=="SimpanPinjam"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Simpan-Pinjam</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="index.php?Page=BukuBesar" class="<?php if($PageMenu=="BukuBesar"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Buku Besar</span>
@@ -267,11 +267,11 @@
                         <i class="bi bi-circle"></i><span>Auto Jurnal</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="index.php?Page=SettingEmail" class="<?php if($PageMenu=="SettingEmail"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Email Gateway</span>
                     </a>
-                </li> 
+                </li>  -->
             </ul>
         </li>
         <li class="nav-heading">Fitur Lainnya</li>
