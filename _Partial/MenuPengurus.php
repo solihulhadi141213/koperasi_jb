@@ -243,11 +243,11 @@
                         <i class="bi bi-circle"></i><span>Laba Rugi</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="index.php?Page=RiwayatSimpanPinjam" class="<?php if($PageMenu=="RiwayatSimpanPinjam"){echo "active";} ?>">
                     <i class="bi bi-circle"></i><span>Riwayat Anggota</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li>
         <li class="nav-item">

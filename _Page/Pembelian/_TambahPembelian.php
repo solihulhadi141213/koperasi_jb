@@ -118,9 +118,8 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <input type="hidden" id="put_id_supplier_for_add_pembelian" name="put_id_supplier_for_add_pembelian" value="">
-                                            <!-- 
-                                            Untuk pembelian berbasis supplier
+                                            <!-- <input type="hidden" id="put_id_supplier_for_add_pembelian" name="put_id_supplier_for_add_pembelian" value=""> -->
+                                            
                                             <div class="col-4">
                                                 <label for="put_id_supplier_for_add_pembelian"><small>Supplier</small></label>
                                             </div>
@@ -129,7 +128,7 @@
                                                     <option value="">Pilih</option>
                                                 </select>
                                             </div> 
-                                            -->
+                                           
                                         </div>
                                     </div>
                                     <div class="col-md-6">
