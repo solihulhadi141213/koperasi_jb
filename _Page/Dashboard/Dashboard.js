@@ -8,7 +8,7 @@ function CountOfBarang() {
             if (response.status == "Success") {
                 $('#put_count_rp_barang').hide().html(response.rp_barang).fadeIn(500);
                 $('#put_count_item_barang').hide().html(response.item_barang).fadeIn(500);
-                CountOfAnggota();
+                CountOfPenjualan();
             } else {
                 $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
             }
@@ -19,88 +19,7 @@ function CountOfBarang() {
     });
 }
 
-// Fungsi Untuk Menampilkan Data Anggota
-function CountOfAnggota() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/CountOfAnggota.php',
-        dataType: "json",
-        success: function(response) {
-            if (response.status == "Success") {
-                $('#put_anggota_aktif').hide().html(response.anggota_aktif).fadeIn(500);
-                $('#put_anggota_keluar').hide().html(response.anggota_keluar).fadeIn(500);
-                CountOfSimpanan();
-            } else {
-                $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
-            }
-        },
-        error: function() {
-            $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>Terjadi Kesalahan Pada Sistem Saat Menghitung Anggota!</small></div>').fadeIn(500);
-        },
-    });
-}
 
-// Fungsi Untuk Menampilkan Data Simpanan Anggota
-function CountOfSimpanan() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/CountOfSimpanan.php',
-        dataType: "json",
-        success: function(response) {
-            if (response.status == "Success") {
-                $('#put_simpanan_anggota').hide().html('<i class="bi bi-plus"></i> '+response.put_simpanan_anggota+'').fadeIn(500);
-                $('#put_penarikan_dana').hide().html('- '+response.put_penarikan_dana+'').fadeIn(500);
-                CountOfPinjaman();
-            } else {
-                $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
-            }
-        },
-        error: function() {
-            $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>Terjadi Kesalahan Pada Sistem Saat Menghitung Simpanan!</small></div>').fadeIn(500);
-        },
-    });
-}
-// Fungsi Untuk Menampilkan Data Pinjaman Anggota
-function CountOfPinjaman() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/CountOfPinjaman.php',
-        dataType: "json",
-        success: function(response) {
-            if (response.status == "Success") {
-                $('#put_pinjaman_anggota').hide().html('<i class="bi bi-bank"></i> '+response.put_pinjaman_anggota+'').fadeIn(500);
-                $('#put_sesi_pinjaman').hide().html('<i class="bi bi-person-circle"></i> '+response.put_sesi_pinjaman+'').fadeIn(500);
-
-                CountOfAngsuran();
-            } else {
-                $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
-            }
-        },
-        error: function() {
-            $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>Terjadi Kesalahan Pada Sistem Saat Menghitung Pinjaman!</small></div>').fadeIn(500);
-        },
-    });
-}
-// Fungsi Untuk Menampilkan Data Angsuran
-function CountOfAngsuran() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/CountOfAngsuran.php',
-        dataType: "json",
-        success: function(response) {
-            if (response.status == "Success") {
-                $('#put_nominal_angsuran').hide().html('<i class="bi bi-coin"></i> '+response.put_nominal_angsuran+'').fadeIn(500);
-                $('#put_record_angsuran').hide().html('<i class="bi bi-table"></i> '+response.put_record_angsuran+'').fadeIn(500);
-                CountOfPenjualan();
-            } else {
-                $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
-            }
-        },
-        error: function() {
-            $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>Terjadi Kesalahan Pada Sistem Saat Menghitung Angsuran!</small></div>').fadeIn(500);
-        },
-    });
-}
 // Fungsi Untuk Menampilkan Data Penjualan
 function CountOfPenjualan() {
     $.ajax({
@@ -131,26 +50,6 @@ function CountOfPembelian() {
             if (response.status == "Success") {
                 $('#put_nominal_pembelian').hide().html('<i class="bi bi-coin"></i> '+response.put_nominal_pembelian+'').fadeIn(500);
                 $('#put_record_pembelian').hide().html('<i class="bi bi-table"></i> ('+response.put_record_pembelian+')').fadeIn(500);
-                CountOfBagiHasil();
-            } else {
-                $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
-            }
-        },
-        error: function() {
-            $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>Terjadi Kesalahan Pada Sistem Saat Menghitung Penjualan!</small></div>').fadeIn(500);
-        },
-    });
-}
-// Fungsi Untuk Menampilkan Data Bagi Hasil
-function CountOfBagiHasil() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/CountOfBagiHasil.php',
-        dataType: "json",
-        success: function(response) {
-            if (response.status == "Success") {
-                $('#put_nominal_bagi_hasil').hide().html('<i class="bi bi-coin"></i> '+response.put_nominal_bagi_hasil+'').fadeIn(500);
-                $('#put_record_bagii_hasil').hide().html('<i class="bi bi-table"></i> ('+response.put_record_bagii_hasil+')').fadeIn(500);
                 CountOfTransaksiOperasional();
             } else {
                 $('#notifikasi_proses').hide().html('<div class="alert alert-danger"><small>' + response.message + '</small></div>').fadeIn(500);
@@ -161,6 +60,7 @@ function CountOfBagiHasil() {
         },
     });
 }
+
 // Fungsi Untuk Menampilkan Data Transaksi Operasional
 function CountOfTransaksiOperasional() {
     $.ajax({
@@ -188,42 +88,11 @@ function ShowPemberitahuanSistem() {
         url: '_Page/Dashboard/ShowPemberitahuanSistem.php',
         success: function(response) {
             $('#ShowPemberitahuanSistem').hide().html(response).fadeIn(500);
-            ShowAnggotaTerbaru();
+            ShowGrafikSiimpanPinjam();
         }
     });
 }
-// Fungsi Untuk Menampilkan Anggota Terbaru
-function ShowAnggotaTerbaru() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowAnggotaTerbaru.php',
-        success: function(response) {
-            $('#ShowAnggotaTerbaru').hide().html(response).fadeIn(500);
-            ShowSimpananTerbaru();
-        }
-    });
-}
-// Fungsi Untuk Menampilkan Simpanan Terbaru
-function ShowSimpananTerbaru() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowSimpananTerbaru.php',
-        success: function(response) {
-            $('#ShowSimpananTerbaru').hide().html(response).fadeIn(500);
-            ShowPinjamanTerbaru();
-        }
-    });
-}
-// Fungsi Untuk Menampilkan Pinjaman Terbaru
-function ShowPinjamanTerbaru() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowPinjamanTerbaru.php',
-        success: function(response) {
-            $('#ShowPinjamanTerbaru').hide().html(response).fadeIn(500);
-        }
-    });
-}
+
 // Fungsi Untuk Menampilkan Grafik
 function ShowGrafikSiimpanPinjam() {
     // Fungsi untuk mengambil data dari file JSON
@@ -295,19 +164,10 @@ function tampilkanTanggal() {
     
     $('#tanggal_menarik').text(tanggal);
 }
-// Fungsi Untuk Menampilkan Kalendaer
-function show_calendar() {
-    var calendarEl = document.getElementById('show_calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth'
-    });
-    calendar.render();
-}
+
 $(document).ready(function () {
     //Menampilkan Data Pertama Kali
     CountOfBarang();
-    show_calendar();
-    ShowGrafikSiimpanPinjam();
     //Jam Menarik
     tampilkanTanggal(); // Tampilkan tanggal saat halaman dimuat
     tampilkanJam();     // Tampilkan jam pertama kali
