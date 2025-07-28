@@ -56,8 +56,8 @@
                                         <button type="button" class="btn btn-md btn-floating btn-info" data-bs-toggle="modal" data-bs-target="#ModalScanBarang" title="Scan Code">
                                             <i class="bi bi-qr-code-scan"></i>
                                         </button>
-                                        <button type="button" class="btn btn-md btn-floating btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCariBarang" title="Cari Barang">
-                                            <i class="bi bi-search"></i>
+                                        <button type="button" class="btn btn-md btn-floating btn-primary" id="tambah_rincian_barang" data-bs-toggle="modal" data-bs-target="#ModalCariBarang" title="Tambah Rincian Barang (SHIFT+A)">
+                                            <i class="bi bi-plus"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -118,6 +118,9 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
+                                            <input type="hidden" id="put_id_supplier_for_add_pembelian" name="put_id_supplier_for_add_pembelian" value="">
+                                            <!-- 
+                                            Untuk pembelian berbasis supplier
                                             <div class="col-4">
                                                 <label for="put_id_supplier_for_add_pembelian"><small>Supplier</small></label>
                                             </div>
@@ -125,7 +128,8 @@
                                                 <select id="put_id_supplier_for_add_pembelian" name="put_id_supplier_for_add_pembelian" class="form-control form-control-lg" data-bs-toggle="modal" data-bs-target="#ModalPilihSupplier">
                                                     <option value="">Pilih</option>
                                                 </select>
-                                            </div>
+                                            </div> 
+                                            -->
                                         </div>
                                     </div>
                                     <div class="col-md-6">

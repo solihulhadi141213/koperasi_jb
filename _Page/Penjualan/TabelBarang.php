@@ -140,4 +140,6 @@
     }else{
         $('#next_button_barang').prop('disabled', false);
     }
+
+    $('#keyword_barang').trigger('focus');
 </script>

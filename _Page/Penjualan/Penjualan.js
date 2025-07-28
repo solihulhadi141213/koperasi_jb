@@ -57,20 +57,22 @@ function ShowDataBulk(get_kategori_transaksi) {
 //Fungsi Menampilkan Data Barang
 function ShowDataBarang() {
     var ProsesCariBarang = $('#ProsesCariBarang').serialize();
-    
-    // Efek fade out sebelum loading
-    $('#TabelBarang').fadeOut(200, function() {
+
+    $('#TabelBarang').fadeOut(200, function () {
         $(this).html('<tr><td class="text-center" colspan="5">Loading...</td></tr>').fadeIn(200);
     });
 
     $.ajax({
-        type 	    : 'POST',
-        url 	    : '_Page/Penjualan/TabelBarang.php',
-        data        : ProsesCariBarang,
-        success     : function(data) {
-            // Ganti isi tabel dengan data hasil AJAX dengan efek
-            $('#TabelBarang').fadeOut(200, function() {
-                $(this).html(data).fadeIn(300);
+        type: 'POST',
+        url: '_Page/Penjualan/TabelBarang.php',
+        data: ProsesCariBarang,
+        success: function (data) {
+            $('#TabelBarang').fadeOut(200, function () {
+                $(this).html(data).fadeIn(300, function () {
+                    setTimeout(function () {
+                        $('#keyword_barang').focus();
+                    }, 100);
+                });
             });
         }
     });
@@ -96,6 +98,7 @@ function ShowDataBarangEdit() {
         }
     });
 }
+
 //Fungsi Menampilkan Data Anggota
 function ShowDataAnggota() {
     var ProsesCariAnggota = $('#ProsesCariAnggota').serialize();
@@ -654,6 +657,15 @@ $(document).ready(function() {
         }, 2000); // Delay 2 detik
     });
 
+    //Kembali Ke transaksi
+    $('.button_kembali_kasir').on('click', function() {
+        var url = $(this).attr('back-url');
+        if (url) {
+            window.location.href = url;
+        } else {
+            alert('URL tujuan tidak tersedia.');
+        }
+    });
     //Ketika kembali
     $(".button_kembali").on("click", function () {
         window.location.href = "index.php?Page=Penjualan";
@@ -666,12 +678,8 @@ $(document).ready(function() {
     }
 
     //Modal Cari Barang
-    $('#ModalCariBarang').on('show.bs.modal', function (e) {
-        var kategori_transaksi=$('#get_kategori_transaksi').html();
-        //Reset Halaman
+    $('#ModalCariBarang').on('shown.bs.modal', function (e) {
         $('#put_page_cari_barang').val(1);
-
-        //Tampilkan Data
         ShowDataBarang();
     });
 
@@ -2368,5 +2376,17 @@ $(document).ready(function() {
                 $("#ButtonEditJurnal").html(ButtonElement).prop("disabled", true);
             },
         });
+    });
+
+
+    //Short Cut
+    
+    //Tambah Rincian Baran (shiift+a)
+     $(document).on('keydown', function (e) {
+        // Cek jika Shift + A ditekan
+        if (e.shiftKey && e.key.toLowerCase() === 'a') {
+            e.preventDefault(); // Mencegah aksi default jika diperlukan
+            $('#tambah_rincian_barang').trigger('click'); // Trigger klik pada tombol
+        }
     });
 });

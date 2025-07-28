@@ -8,6 +8,16 @@
             include "_Page/Error/PageNotFound.php";
         }else{
             $id_transaksi_jual_beli=$_GET['id'];
+            $kategori_transaksi=GetDetailData($Conn, 'transaksi_jual_beli', 'id_transaksi_jual_beli', $id_transaksi_jual_beli, 'kategori');
+            if($kategori_transaksi=="Penjualan"){
+                $url_back="index.php?Page=Penjualan&Sub=TambahPenjualan&retur=Tidak";
+            }else{
+                if($kategori_transaksi=="Retur Penjualan"){
+                    $url_back="index.php?Page=Penjualan&Sub=TambahPenjualan&retur=Ya";
+                }else{
+                    $url_back="index.php";
+                }
+            }
             
 ?>
             <div class="pagetitle">
@@ -45,6 +55,9 @@
                                     <b class="card-title"># Detail Transaksi</b>
                                 </div>
                                 <div class="col-4 mb-2 mt-2 text-end">
+                                    <button type="button" class="btn btn-md btn-floating btn-primary button_kembali_kasir" title="Kembali Ke Kasir" back-url="<?php echo $url_back; ?>">
+                                        <i class="bi bi-arrow-left"></i>
+                                    </button>
                                     <button type="button" class="btn btn-md btn-floating btn-dark button_kembali" title="Kembali">
                                         <i class="bi bi-chevron-left"></i>
                                     </button>

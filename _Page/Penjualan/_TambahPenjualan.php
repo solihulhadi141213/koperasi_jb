@@ -47,7 +47,8 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-8 mb-2 mt-2">
-                                        # <b class="card-title" id="get_kategori_transaksi"><?php echo "$kategori_transaksi"; ?></b>
+                                        # 
+                                        <b class="card-title" id="get_kategori_transaksi"><?php echo "$kategori_transaksi"; ?></b>
                                     </div>
                                     <div class="col-4 mb-2 mt-2 text-end">
                                         <button type="button" class="btn btn-md btn-floating btn-dark button_kembali" title="Kembali">
@@ -56,8 +57,8 @@
                                         <button type="button" class="btn btn-md btn-floating btn-info" data-bs-toggle="modal" data-bs-target="#ModalScanBarang" title="Scan Code">
                                             <i class="bi bi-qr-code-scan"></i>
                                         </button>
-                                        <button type="button" class="btn btn-md btn-floating btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCariBarang" title="Cari Barang">
-                                            <i class="bi bi-search"></i>
+                                        <button type="button" class="btn btn-md btn-floating btn-primary" id="tambah_rincian_barang" data-bs-toggle="modal" data-bs-target="#ModalCariBarang" title="Tambahkan Rincian Barang (shift+A)">
+                                            <i class="bi bi-plus"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -118,6 +119,9 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
+                                            <input type="hidden" name="put_id_anggota_for_add_penjualan" id="put_id_anggota_for_add_penjualan" value="">
+                                            <!-- 
+                                            Untuk Transaksi Berbasis Anggota
                                             <div class="col-4">
                                                 <label for="put_id_anggota_for_add_penjualan"><small>Anggota</small></label>
                                             </div>
@@ -125,7 +129,8 @@
                                                 <select id="put_id_anggota_for_add_penjualan" name="put_id_anggota_for_add_penjualan" class="form-control form-control-lg" data-bs-toggle="modal" data-bs-target="#ModalPilihAnggota">
                                                     <option value="">Pilih</option>
                                                 </select>
-                                            </div>
+                                            </div> 
+                                            -->
                                         </div>
                                     </div>
                                     <div class="col-md-6">

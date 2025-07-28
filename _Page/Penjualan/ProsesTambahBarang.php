@@ -44,7 +44,7 @@
                     $nama_barang = GetDetailData($Conn, 'barang', 'id_barang', $id_barang, 'nama_barang');
                     $konversi = GetDetailData($Conn, 'barang', 'id_barang', $id_barang, 'konversi');
                     $satuan_barang = GetDetailData($Conn, 'barang', 'id_barang', $id_barang, 'satuan_barang');
-
+                    
                     if(empty($_POST['id_barang_satuan'])){
                         $id_barang_satuan = "";
                         $konversi_multi = GetDetailData($Conn, 'barang', 'id_barang', $id_barang, 'konversi');
